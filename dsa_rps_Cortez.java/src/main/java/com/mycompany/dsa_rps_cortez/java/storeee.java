@@ -3,18 +3,32 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package com.mycompany.dsa_rps_cortez.java;
+    
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author CL2-PC
  */
-public class glentzy extends javax.swing.JFrame {
-
+public class storeee extends javax.swing.JFrame {
+     
+    private static final int PIATOS = 22;
+    private static final int NOVA = 25;
+    private static final int COKE = 22;
+    private static final int ROYAL = 25;
+    
+    //selected data
+    
+    private String ItemName = "";
+    private int ItemPrice = 0;
+    private String selectedCategory = "";
     /**
-     * Creates new form glentzy
+     * Creates new form NewJFrame
      */
-    public glentzy() {
+    public NewJFrame() {
         initComponents();
+        setTitle("My Store");
+        
     }
 
     /**
@@ -30,8 +44,6 @@ public class glentzy extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
-        jTextField5 = new javax.swing.JTextField();
-        jButton4 = new javax.swing.JButton();
         jPanel11 = new javax.swing.JPanel();
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
@@ -39,25 +51,31 @@ public class glentzy extends javax.swing.JFrame {
         jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
-        jTextField1 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
         jPanel12 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
+        jTextField9 = new javax.swing.JTextField();
+        jLabel18 = new javax.swing.JLabel();
+        jTextField10 = new javax.swing.JTextField();
+        btnchoose5 = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
-        jTextField3 = new javax.swing.JTextField();
-        jButton2 = new javax.swing.JButton();
+        txtsnacks = new javax.swing.JTextField();
+        Jbutton2 = new javax.swing.JButton();
         jPanel9 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
-        jTextField4 = new javax.swing.JTextField();
-        jButton3 = new javax.swing.JButton();
+        txtdrinks = new javax.swing.JTextField();
+        Jbutton3 = new javax.swing.JButton();
         jPanel10 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
@@ -66,6 +84,13 @@ public class glentzy extends javax.swing.JFrame {
         jTextField6 = new javax.swing.JTextField();
         jTextField2 = new javax.swing.JTextField();
         button1 = new java.awt.Button();
+        jPanel8 = new javax.swing.JPanel();
+        txtmenu = new javax.swing.JTextField();
+        Jbutton1 = new javax.swing.JButton();
+        jPanel14 = new javax.swing.JPanel();
+        jLabel26 = new javax.swing.JLabel();
+        jLabel27 = new javax.swing.JLabel();
+        jLabel28 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -86,16 +111,6 @@ public class glentzy extends javax.swing.JFrame {
         jPanel3.setBackground(new java.awt.Color(0, 0, 204));
         jPanel3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jTextField5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField5ActionPerformed(evt);
-            }
-        });
-        jPanel3.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, 180, 40));
-
-        jButton4.setText("Select");
-        jPanel3.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, 180, 40));
 
         jPanel11.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -120,47 +135,77 @@ public class glentzy extends javax.swing.JFrame {
         jLabel19.setText("Cash:");
         jPanel11.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, -1, -1));
 
-        jPanel3.add(jPanel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 180, 130));
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel2.setText("00.00 PHP");
+        jPanel11.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 100, -1, -1));
+
+        jLabel20.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel20.setText("0");
+        jPanel11.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 20, -1, -1));
+
+        jLabel21.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel21.setText("0");
+        jPanel11.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 40, -1, -1));
+
+        jLabel22.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel22.setText("00.00 PHP");
+        jPanel11.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 60, -1, -1));
+
+        jLabel23.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel23.setText("00.00 PHP");
+        jPanel11.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 80, -1, -1));
+
+        jPanel3.add(jPanel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 180, 230));
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel5.setText("Receipt:");
         jPanel3.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
 
-        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 140, 200, 270));
+        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 130, 200, 270));
 
         jPanel4.setBackground(new java.awt.Color(0, 0, 204));
         jPanel4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jPanel4.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 180, 40));
-
-        jButton1.setText("Select");
-        jPanel4.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, 180, 40));
 
         jPanel12.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel2.setText("[2] = Drinks");
-        jPanel12.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 60, -1, 20));
-
         jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel7.setText("[1] = Snacks ");
-        jPanel12.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 40, -1, -1));
+        jLabel7.setText("Cash:");
+        jPanel12.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 40, -1));
 
-        jPanel4.add(jPanel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 180, 110));
+        jTextField9.setBackground(new java.awt.Color(255, 255, 255));
+        jTextField9.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel12.add(jTextField9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 190, 40));
+
+        jLabel18.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel18.setText("Quantity:");
+        jPanel12.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+
+        jTextField10.setBackground(new java.awt.Color(255, 255, 255));
+        jTextField10.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel12.add(jTextField10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 190, 40));
+
+        btnchoose5.setText("COMPUTE");
+        jPanel12.add(btnchoose5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, 190, 40));
+
+        jPanel4.add(jPanel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 210, 220));
 
         jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel9.setText("Menu:");
+        jLabel9.setText("QUANTITY");
         jPanel4.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
-        jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 140, 200, 260));
+        jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 410, 230, 260));
 
         jPanel5.setBackground(new java.awt.Color(0, 0, 204));
         jPanel5.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jPanel5.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 180, 40));
 
-        jButton2.setText("Select");
-        jPanel5.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, 180, 40));
+        txtsnacks.setBackground(new java.awt.Color(255, 255, 255));
+        txtsnacks.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel5.add(txtsnacks, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 180, 40));
+
+        Jbutton2.setText("Select");
+        jPanel5.add(Jbutton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, 180, 40));
 
         jPanel9.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -181,21 +226,23 @@ public class glentzy extends javax.swing.JFrame {
         jLabel11.setText("Drinks:");
         jPanel5.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
-        jPanel1.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 140, 200, 260));
+        jPanel1.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 130, 200, 260));
 
         jPanel6.setBackground(new java.awt.Color(0, 0, 204));
         jPanel6.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jTextField4.addActionListener(new java.awt.event.ActionListener() {
+        txtdrinks.setBackground(new java.awt.Color(255, 255, 255));
+        txtdrinks.setForeground(new java.awt.Color(0, 0, 0));
+        txtdrinks.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField4ActionPerformed(evt);
+                txtdrinksActionPerformed(evt);
             }
         });
-        jPanel6.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 180, 40));
+        jPanel6.add(txtdrinks, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 180, 40));
 
-        jButton3.setText("Select");
-        jPanel6.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, 180, 40));
+        Jbutton3.setText("Select");
+        jPanel6.add(Jbutton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, 180, 40));
 
         jPanel10.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -213,7 +260,7 @@ public class glentzy extends javax.swing.JFrame {
         jLabel12.setText("Snacks:");
         jPanel6.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
-        jPanel1.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 140, 200, 260));
+        jPanel1.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 130, 200, 260));
 
         jPanel7.setBackground(new java.awt.Color(255, 255, 255));
         jPanel7.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -235,20 +282,50 @@ public class glentzy extends javax.swing.JFrame {
         button1.setLabel("Calculate");
         jPanel7.add(button1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 110, 270, 40));
 
-        jPanel1.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 410, 410, 170));
+        jPanel1.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 410, 410, 170));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 910, 790));
+        jPanel8.setBackground(new java.awt.Color(0, 0, 204));
+        jPanel8.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel8.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        txtmenu.setBackground(new java.awt.Color(255, 255, 255));
+        txtmenu.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel8.add(txtmenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 180, 40));
+
+        Jbutton1.setText("Select");
+        Jbutton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Jbutton1ActionPerformed(evt);
+            }
+        });
+        jPanel8.add(Jbutton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, 180, 40));
+
+        jPanel14.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel26.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel26.setText("[2] = Drinks");
+        jPanel14.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 60, -1, 20));
+
+        jLabel27.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel27.setText("[1] = Snacks ");
+        jPanel14.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 40, -1, -1));
+
+        jPanel8.add(jPanel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 180, 110));
+
+        jLabel28.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel28.setText("Menu:");
+        jPanel8.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+
+        jPanel1.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 130, 200, 260));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 910, 790));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
+    private void txtdrinksActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtdrinksActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField4ActionPerformed
-
-    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField5ActionPerformed
+    }//GEN-LAST:event_txtdrinksActionPerformed
 
     private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
         // TODO add your handling code here:
@@ -257,6 +334,39 @@ public class glentzy extends javax.swing.JFrame {
     private void jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField6ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField6ActionPerformed
+
+    private void Jbutton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Jbutton1ActionPerformed
+        // TODO add your handling code here:
+       if (!"drinks".equals (selectedCategory)){
+           JOptionPane.showMessageDialog(this,
+           "Drinks is locked !\nSelected:" +
+           (selectedCategory.isEmpty() ? "Choose first in MENU" : selectedCategory),
+           "Locked",
+           JOptionPane.WARNING_MESSAGE);
+           txtdrinks.setText("");
+           return;
+       }
+       String input = txtdrinks.getText().trim();
+       if (input.equals("1")) {
+           ItemName = "Coke";
+           ItemPrice = COKE;
+           JOptionPane.showMessageDialog(this,
+           "Coke selected\nPrice" + ItemPrice + "pesos");
+       }
+       else if (input.equals ("2")){
+           ItemName = "Royal";
+           ItemPrice =  ROYAL;
+           JOptionPane.showMessageDialog(this,
+           "Royal selectedd\nPrice: " + ItemPrice + "pesos");
+       }
+       else {
+           JOptionPane.showMessageDialog(this,
+                   "Enter 1 for coke\nEnter 2 for Royal",
+                   "Invalid Choice",
+                   JOptionPane.ERROR_MESSAGE);
+       }
+       txtdrinks.setText("");
+    }//GEN-LAST:event_Jbutton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -275,30 +385,31 @@ public class glentzy extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(glentzy.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(storeee.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(glentzy.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(storeee.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(glentzy.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(storeee.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(glentzy.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(storeee.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new glentzy().setVisible(true);
+                new storeee().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Jbutton1;
+    private javax.swing.JButton Jbutton2;
+    private javax.swing.JButton Jbutton3;
+    private javax.swing.JButton btnchoose5;
     private java.awt.Button button1;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -308,8 +419,16 @@ public class glentzy extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -321,18 +440,21 @@ public class glentzy extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel12;
+    private javax.swing.JPanel jPanel14;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField10;
     private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
+    private javax.swing.JTextField jTextField9;
+    private javax.swing.JTextField txtdrinks;
+    private javax.swing.JTextField txtmenu;
+    private javax.swing.JTextField txtsnacks;
     // End of variables declaration//GEN-END:variables
 }
