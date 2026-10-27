@@ -26,110 +26,153 @@ public class form1 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
         jButton8 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
+        jButton15 = new javax.swing.JButton();
+        jButton6 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
         jButton9 = new javax.swing.JButton();
-        jButton10 = new javax.swing.JButton();
-        jButton11 = new javax.swing.JButton();
         jButton12 = new javax.swing.JButton();
         jButton13 = new javax.swing.JButton();
+        jButton11 = new javax.swing.JButton();
         jButton14 = new javax.swing.JButton();
-        jButton15 = new javax.swing.JButton();
         jButton16 = new javax.swing.JButton();
         jButton17 = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
+        jButton10 = new javax.swing.JButton();
+        jButton7 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(143, 0, -1, -1));
 
-        jButton1.setText("5");
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(235, 272, 77, 43));
+        jPanel2.setBackground(new java.awt.Color(102, 102, 255));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton2.setText("1");
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(146, 223, 77, 43));
-
-        jButton3.setText("4");
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(143, 272, 80, 43));
-
-        jButton4.setText("8");
-        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(235, 321, 77, 43));
-
-        jButton5.setText("3");
-        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(322, 223, 76, 43));
-
-        jButton6.setText("7");
-        getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(143, 321, 80, 43));
-
-        jButton7.setBackground(new java.awt.Color(204, 0, 0));
-        jButton7.setText("Payment");
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(146, 419, 350, 61));
-
-        jButton8.setText("2");
-        getContentPane().add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(233, 223, 77, 43));
-
-        jButton9.setText("9");
-        getContentPane().add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(324, 321, 76, 43));
-
-        jButton10.setBackground(new java.awt.Color(255, 153, 255));
-        jButton10.setText("delete");
-        getContentPane().add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(419, 370, 77, 43));
-
-        jButton11.setText(".");
-        getContentPane().add(jButton11, new org.netbeans.lib.awtextra.AbsoluteConstraints(324, 370, 77, 43));
-
-        jButton12.setText("+/-");
-        getContentPane().add(jButton12, new org.netbeans.lib.awtextra.AbsoluteConstraints(143, 370, 80, 43));
-
-        jButton13.setText("0");
-        getContentPane().add(jButton13, new org.netbeans.lib.awtextra.AbsoluteConstraints(229, 370, 77, 43));
-
-        jButton14.setBackground(new java.awt.Color(0, 153, 51));
-        jButton14.setText("quantity");
-        getContentPane().add(jButton14, new org.netbeans.lib.awtextra.AbsoluteConstraints(419, 223, 76, 43));
-
-        jButton15.setText("6");
-        getContentPane().add(jButton15, new org.netbeans.lib.awtextra.AbsoluteConstraints(324, 272, 77, 43));
-
-        jButton16.setBackground(new java.awt.Color(51, 51, 255));
-        jButton16.setText("back");
-        getContentPane().add(jButton16, new org.netbeans.lib.awtextra.AbsoluteConstraints(419, 272, 77, 43));
-
-        jButton17.setBackground(new java.awt.Color(255, 255, 102));
-        jButton17.setText("ok");
-        getContentPane().add(jButton17, new org.netbeans.lib.awtextra.AbsoluteConstraints(419, 321, 77, 43));
-
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel1.setText("Total:");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(143, 188, 59, 29));
-
-        jPanel1.setBackground(new java.awt.Color(204, 255, 255));
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 352, Short.MAX_VALUE)
+            .addGap(0, 344, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 147, Short.MAX_VALUE)
+            .addGap(0, 114, Short.MAX_VALUE)
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(143, 35, -1, -1));
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(143, 0, -1, -1));
+        jPanel2.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 90, 350, 120));
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel1.setText("Total:");
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 240, 59, 29));
+
+        jButton2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jButton2.setText("1");
+        jButton2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel2.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 290, 80, 43));
+
+        jButton8.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jButton8.setText("2");
+        jButton8.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel2.add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 290, 77, 43));
+
+        jButton5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jButton5.setText("3");
+        jButton5.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel2.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 290, 76, 43));
+
+        jButton3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jButton3.setText("4");
+        jButton3.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel2.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 340, 80, 43));
+
+        jButton1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jButton1.setText("5");
+        jButton1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 340, 77, 43));
+
+        jButton15.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jButton15.setText("6");
+        jButton15.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel2.add(jButton15, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 340, 77, 43));
+
+        jButton6.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jButton6.setText("7");
+        jButton6.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel2.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 390, 80, 43));
+
+        jButton4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jButton4.setText("8");
+        jButton4.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel2.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 390, 77, 43));
+
+        jButton9.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jButton9.setText("9");
+        jButton9.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel2.add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 390, 76, 43));
+
+        jButton12.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jButton12.setText("+/-");
+        jButton12.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel2.add(jButton12, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 440, 80, 43));
+
+        jButton13.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jButton13.setText("0");
+        jButton13.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel2.add(jButton13, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 440, 77, 43));
+
+        jButton11.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jButton11.setText(".");
+        jButton11.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel2.add(jButton11, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 440, 77, 43));
+
+        jButton14.setBackground(new java.awt.Color(0, 153, 51));
+        jButton14.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jButton14.setText("quantity");
+        jButton14.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel2.add(jButton14, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 290, 76, 43));
+
+        jButton16.setBackground(new java.awt.Color(51, 51, 255));
+        jButton16.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jButton16.setText("back");
+        jPanel2.add(jButton16, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 340, 77, 43));
+
+        jButton17.setBackground(new java.awt.Color(255, 255, 102));
+        jButton17.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jButton17.setText("ok");
+        jPanel2.add(jButton17, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 390, 77, 43));
+
+        jButton10.setBackground(new java.awt.Color(255, 153, 255));
+        jButton10.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jButton10.setText("delete");
+        jPanel2.add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 440, 77, 43));
+
+        jButton7.setBackground(new java.awt.Color(204, 0, 0));
+        jButton7.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jButton7.setText("Payment");
+        jButton7.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 500, 350, 61));
+
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 590, 600));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -137,6 +180,10 @@ public class form1 extends javax.swing.JFrame {
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -194,5 +241,6 @@ public class form1 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables
 }

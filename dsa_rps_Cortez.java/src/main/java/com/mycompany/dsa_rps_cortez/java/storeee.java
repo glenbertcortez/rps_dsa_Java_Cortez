@@ -13,23 +13,25 @@ import javax.swing.JOptionPane;
  */
 public class storeee extends javax.swing.JFrame {
      
+    // ========== PRICES ==========
     private static final int PIATOS = 22;
-    private static final int NOVA = 25;
-    private static final int COKE = 22;
-    private static final int ROYAL = 25;
-    
-    //selected data
-    
-    private String ItemName = "";
-    private int ItemPrice = 0;
+    private static final int NOVA   = 25;
+    private static final int COKE   = 22;
+    private static final int ROYAL  = 25;
+
+    // ========== SELECTED DATA ==========
+    private String itemName = "";
+    private int    itemPrice = 0;
     private String selectedCategory = "";
-    /**
-     *
-     */
-    public storeee(){
+
+    private static final java.util.logging.Logger logger =
+        java.util.logging.Logger.getLogger(storeee.class.getName());
+
+    public storeee() {
         initComponents();
-        setTitle("Cafeteria Order System");
+        setTitle("MY SARI-SARI STORE");
         setLocationRelativeTo(null);
+        setResizable(false);
     }
     /** 
      * This method is called from within the constructor to initialize the form.
@@ -41,12 +43,9 @@ public class storeee extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jPanel11 = new javax.swing.JPanel();
         jLabel13 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
@@ -63,34 +62,30 @@ public class storeee extends javax.swing.JFrame {
         txt1quantity = new javax.swing.JTextField();
         jLabel18 = new javax.swing.JLabel();
         txt2quantity = new javax.swing.JTextField();
-        btnchoose5 = new javax.swing.JButton();
+        btnCompute = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
-        jPanel5 = new javax.swing.JPanel();
-        txtsnacks = new javax.swing.JTextField();
-        Jbutton2 = new javax.swing.JButton();
-        jPanel9 = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jPanel6 = new javax.swing.JPanel();
-        txtdrinks = new javax.swing.JTextField();
-        Jbutton3 = new javax.swing.JButton();
-        jPanel10 = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        jPanel7 = new javax.swing.JPanel();
-        jTextField6 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        button1 = new java.awt.Button();
         jPanel8 = new javax.swing.JPanel();
         txtmenu = new javax.swing.JTextField();
-        Jbutton1 = new javax.swing.JButton();
         jPanel14 = new javax.swing.JPanel();
         jLabel26 = new javax.swing.JLabel();
         jLabel27 = new javax.swing.JLabel();
-        jLabel28 = new javax.swing.JLabel();
+        btnMainSelect = new javax.swing.JButton();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        btnNoThankYou = new javax.swing.JButton();
+        btnOrderAgain = new javax.swing.JButton();
+        jPanel6 = new javax.swing.JPanel();
+        txtdrinks = new javax.swing.JTextField();
+        jPanel10 = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        btnSnacksSelect = new javax.swing.JButton();
+        jPanel5 = new javax.swing.JPanel();
+        txtsnacks = new javax.swing.JTextField();
+        jPanel9 = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel24 = new javax.swing.JLabel();
+        btnDrinksSelect = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -98,218 +93,234 @@ public class storeee extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(102, 204, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel1.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel1.setFont(new java.awt.Font("Algerian", 1, 48)); // NOI18N
-        jLabel1.setText("MY SARI SARI STORE");
-        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 10, 560, 70));
-
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 910, 70));
-
         jPanel3.setBackground(new java.awt.Color(0, 0, 204));
-        jPanel3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED), "RECEIPT", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 18))); // NOI18N
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jPanel11.setBackground(new java.awt.Color(204, 255, 255));
         jPanel11.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel13.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel13.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel13.setText("Change:");
-        jPanel11.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, -1, -1));
-        jPanel11.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, -1, 40));
+        jPanel11.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, -1, -1));
 
-        jLabel15.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel15.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel15.setText("Item:");
-        jPanel11.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, -1, -1));
+        jPanel11.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, 20));
 
-        jLabel16.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel16.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel16.setText("Quantity:");
-        jPanel11.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, -1, -1));
+        jPanel11.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 70, -1));
 
-        jLabel17.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel17.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel17.setText("Total:");
-        jPanel11.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, -1, -1));
+        jPanel11.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, -1, 20));
 
-        jLabel19.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel19.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel19.setText("Cash:");
-        jPanel11.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, -1, -1));
+        jPanel11.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, -1, 20));
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel2.setText("00.00 PHP");
-        jPanel11.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 100, -1, -1));
+        jPanel11.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 170, 120, 20));
 
-        jLabellll21.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabellll21.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabellll21.setText("0");
-        jPanel11.add(jLabellll21, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 20, -1, -1));
+        jPanel11.add(jLabellll21, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 0, 120, 40));
 
-        jLabel21.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel21.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel21.setText("0");
-        jPanel11.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 40, -1, -1));
+        jPanel11.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(98, 40, 120, 40));
 
-        jLabel22.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel22.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel22.setText("00.00 PHP");
-        jPanel11.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 60, -1, -1));
+        jPanel11.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 90, 120, -1));
 
-        jLabel23.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel23.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel23.setText("00.00 PHP");
-        jPanel11.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 80, -1, -1));
+        jPanel11.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 130, 120, -1));
 
-        jPanel3.add(jPanel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 180, 230));
+        jPanel3.add(jPanel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 220, 200));
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel5.setText("Receipt:");
         jPanel3.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
 
-        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 130, 200, 270));
+        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 380, 240, 250));
 
         jPanel4.setBackground(new java.awt.Color(0, 0, 204));
-        jPanel4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED), "QUANTITY", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 18))); // NOI18N
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jPanel12.setBackground(new java.awt.Color(204, 255, 255));
+        jPanel12.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel12.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
         jLabel7.setText("Cash:");
-        jPanel12.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 40, -1));
-        jPanel12.add(txt1quantity, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 190, 40));
+        jPanel12.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 50, 30));
 
-        jLabel18.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        txt1quantity.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel12.add(txt1quantity, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 180, 40));
+
+        jLabel18.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
         jLabel18.setText("Quantity:");
-        jPanel12.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
-        jPanel12.add(txt2quantity, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 190, 40));
+        jPanel12.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, -1, 30));
 
-        btnchoose5.setText("COMPUTE");
-        jPanel12.add(btnchoose5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, 190, 40));
+        txt2quantity.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel12.add(txt2quantity, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 180, 40));
 
-        jPanel4.add(jPanel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 210, 220));
+        btnCompute.setFont(new java.awt.Font("Verdana", 3, 14)); // NOI18N
+        btnCompute.setText("COMPUTE");
+        btnCompute.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnCompute.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnComputeActionPerformed(evt);
+            }
+        });
+        jPanel12.add(btnCompute, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 180, 40));
+
+        jPanel4.add(jPanel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 200, 200));
 
         jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel9.setText("QUANTITY");
         jPanel4.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
-        jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 410, 230, 260));
+        jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 380, 240, 250));
 
-        jPanel5.setBackground(new java.awt.Color(0, 0, 204));
-        jPanel5.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jPanel5.add(txtsnacks, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 180, 40));
+        jPanel8.setBackground(new java.awt.Color(0, 0, 204));
+        jPanel8.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED), "MAIN MENU", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 18))); // NOI18N
+        jPanel8.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel8.add(txtmenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, 200, 40));
 
-        Jbutton2.setText("Select");
-        jPanel5.add(Jbutton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, 180, 40));
+        jPanel14.setBackground(new java.awt.Color(204, 255, 255));
+        jPanel14.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel9.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jLabel26.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
+        jLabel26.setText("[2]   Drinks");
+        jPanel14.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 50, -1, 30));
 
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel3.setText("[2] Coke 22.00 php");
-        jPanel9.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, -1, -1));
+        jLabel27.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
+        jLabel27.setText("[1]   Snacks ");
+        jPanel14.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, 110, 30));
 
-        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel6.setText("[1] Royal 25.00 php");
-        jPanel9.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, -1, 20));
+        jPanel8.add(jPanel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 200, 110));
 
-        jPanel5.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 180, 110));
+        btnMainSelect.setFont(new java.awt.Font("Verdana", 3, 14)); // NOI18N
+        btnMainSelect.setText("SELECT");
+        btnMainSelect.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnMainSelect.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMainSelectActionPerformed(evt);
+            }
+        });
+        jPanel8.add(btnMainSelect, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, 200, 40));
 
-        jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jPanel5.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+        jPanel1.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, 240, 260));
 
-        jLabel11.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel11.setText("Drinks:");
-        jPanel5.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+        jLabel8.setBackground(new java.awt.Color(51, 102, 255));
+        jLabel8.setFont(new java.awt.Font("Tahoma", 3, 48)); // NOI18N
+        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel8.setText("MY SARI-SARI STORE");
+        jLabel8.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 10, 600, 70));
 
-        jPanel1.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 130, 200, 260));
+        jLabel6.setFont(new java.awt.Font("SansSerif", 1, 24)); // NOI18N
+        jLabel6.setText("Do you want to order again?");
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 390, -1, 40));
+
+        btnNoThankYou.setBackground(new java.awt.Color(255, 0, 0));
+        btnNoThankYou.setFont(new java.awt.Font("Verdana", 3, 24)); // NOI18N
+        btnNoThankYou.setText("NO, THANK YOU");
+        btnNoThankYou.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnNoThankYou.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNoThankYouActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnNoThankYou, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 510, 240, 60));
+
+        btnOrderAgain.setBackground(new java.awt.Color(0, 204, 0));
+        btnOrderAgain.setFont(new java.awt.Font("Verdana", 3, 24)); // NOI18N
+        btnOrderAgain.setText("ORDER AGAIN");
+        btnOrderAgain.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnOrderAgain.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnOrderAgainActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnOrderAgain, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 440, 240, 60));
 
         jPanel6.setBackground(new java.awt.Color(0, 0, 204));
-        jPanel6.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel6.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED), "MENU SNACKS", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 18))); // NOI18N
         jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        txtdrinks.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         txtdrinks.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtdrinksActionPerformed(evt);
             }
         });
-        jPanel6.add(txtdrinks, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 180, 40));
+        jPanel6.add(txtdrinks, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, 200, 40));
 
-        Jbutton3.setText("Select");
-        Jbutton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Jbutton3ActionPerformed(evt);
-            }
-        });
-        jPanel6.add(Jbutton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, 180, 40));
-
+        jPanel10.setBackground(new java.awt.Color(204, 255, 255));
+        jPanel10.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel10.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel4.setText("Nova =  23.00 php");
-        jPanel10.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, -1, -1));
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
+        jLabel4.setText("[2] Nova  23.00 PHP");
+        jPanel10.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 160, 30));
 
-        jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel8.setText("Piattos =  22.00 php");
-        jPanel10.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, -1, -1));
+        jLabel20.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
+        jLabel20.setText("[1] Piatos 22.00 PHP");
+        jPanel10.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, -1, 30));
 
-        jPanel6.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 180, 110));
+        jPanel6.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 200, 110));
 
-        jLabel12.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel12.setText("Snacks:");
-        jPanel6.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
-
-        jPanel1.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 130, 200, 260));
-
-        jPanel7.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel7.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jTextField6.addActionListener(new java.awt.event.ActionListener() {
+        btnSnacksSelect.setFont(new java.awt.Font("Verdana", 3, 14)); // NOI18N
+        btnSnacksSelect.setText("SELECT");
+        btnSnacksSelect.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnSnacksSelect.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField6ActionPerformed(evt);
+                btnSnacksSelectActionPerformed(evt);
             }
         });
-        jPanel7.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 380, 40));
+        jPanel6.add(btnSnacksSelect, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, 200, 40));
 
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        jPanel1.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 100, 240, 260));
+
+        jPanel5.setBackground(new java.awt.Color(0, 0, 204));
+        jPanel5.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED), "MENU DRINKS", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 18))); // NOI18N
+        jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        txtsnacks.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel5.add(txtsnacks, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, 200, 40));
+
+        jPanel9.setBackground(new java.awt.Color(204, 255, 255));
+        jPanel9.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel9.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
+        jLabel3.setText("[2] Coke   22.00 PHP");
+        jPanel9.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, -1, 30));
+
+        jLabel24.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
+        jLabel24.setText("[1] Royal 25.00 PHP");
+        jPanel9.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, -1, 30));
+
+        jPanel5.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 200, 110));
+
+        btnDrinksSelect.setFont(new java.awt.Font("Verdana", 3, 14)); // NOI18N
+        btnDrinksSelect.setText("SELECT");
+        btnDrinksSelect.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnDrinksSelect.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                btnDrinksSelectActionPerformed(evt);
             }
         });
-        jPanel7.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 380, 40));
+        jPanel5.add(btnDrinksSelect, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, 200, 40));
 
-        button1.setLabel("Calculate");
-        jPanel7.add(button1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 110, 270, 40));
+        jPanel1.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 100, 240, 260));
 
-        jPanel1.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 410, 410, 170));
-
-        jPanel8.setBackground(new java.awt.Color(0, 0, 204));
-        jPanel8.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jPanel8.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jPanel8.add(txtmenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 180, 40));
-
-        Jbutton1.setText("Select");
-        Jbutton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Jbutton1ActionPerformed(evt);
-            }
-        });
-        jPanel8.add(Jbutton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, 180, 40));
-
-        jPanel14.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel26.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel26.setText("[2] = Drinks");
-        jPanel14.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 60, -1, 20));
-
-        jLabel27.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel27.setText("[1] = Snacks ");
-        jPanel14.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 40, -1, -1));
-
-        jPanel8.add(jPanel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 180, 110));
-
-        jLabel28.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel28.setText("Menu:");
-        jPanel8.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
-
-        jPanel1.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 130, 200, 260));
-
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 910, 790));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 920, 650));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -319,84 +330,156 @@ public class storeee extends javax.swing.JFrame {
         Jbutton2ActionPerformed(evt);
     }//GEN-LAST:event_txtdrinksActionPerformed
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
-
-    private void jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField6ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField6ActionPerformed
-
-    private void Jbutton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Jbutton1ActionPerformed
-        // TODO add your handling code here:
-       if (!"drinks".equals (selectedCategory)){
-           JOptionPane.showMessageDialog(this,
-           "Drinks is locked !\nSelected:" +
-           (selectedCategory.isEmpty() ? "Choose first in MENU" : selectedCategory),
-           "Locked",
-           JOptionPane.WARNING_MESSAGE);
-           txtdrinks.setText("");
-           return;
-       }
-       String input = txtdrinks.getText().trim();
-       if (input.equals("1")) {
-           ItemName = "Coke";
-           ItemPrice = COKE;
-           JOptionPane.showMessageDialog(this,
-           "Coke selected\nPrice" + ItemPrice + "pesos");
-       }
-       else if (input.equals ("2")){
-           ItemName = "Royal";
-           ItemPrice =  ROYAL;
-           JOptionPane.showMessageDialog(this,
-           "Royal selectedd\nPrice: " + ItemPrice + "pesos");
-       }
-       else {
-           JOptionPane.showMessageDialog(this,
-                   "Enter 1 for coke\nEnter 2 for Royal",
-                   "Invalid Choice",
-                   JOptionPane.ERROR_MESSAGE);
-       }
-       txtdrinks.setText("");
-    }//GEN-LAST:event_Jbutton1ActionPerformed
-
-    private void Jbutton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Jbutton3ActionPerformed
+    private void btnMainSelectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMainSelectActionPerformed
         // TODO add your handling code here:
         String input = txtmenu.getText().trim();
-        
         if (input.equals("1")) {
-        selectedCategory = "snacks";
-        JoptionPane.showMessageDialog(this,
-        "Snacks selected!\nGo to Snacks pane1\n(Drinks locked)");
+            selectedCategory = "snacks";
+            JOptionPane.showMessageDialog(this,
+                "✅ Snacks selected!\nGo to Snacks panel",
+                "Category Selected", JOptionPane.INFORMATION_MESSAGE);
+        } else if (input.equals("2")) {
+            selectedCategory = "drinks";
+            JOptionPane.showMessageDialog(this,
+                "✅ Drinks selected!\nGo to Drinks panel",
+                "Category Selected", JOptionPane.INFORMATION_MESSAGE);
+        } else {
+            JOptionPane.showMessageDialog(this,
+                "Enter 1 for Snacks\nEnter 2 for Drinks",
+                "Invalid Choice", JOptionPane.ERROR_MESSAGE);
+            selectedCategory = "";
         }
-        else if (input.equals("2")){
-        selectedCategory = "drinks";
-        JoptionPane.showMessageDialog(this,
-                "Drinks selected!\nGo to Drinks pane1\n(Snakcs locked)");
+        txtmenu.setText("");
+        
+    }//GEN-LAST:event_btnMainSelectActionPerformed
+
+    private void btnSnacksSelectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSnacksSelectActionPerformed
+        // TODO add your handling code here:
+        if (!"snacks".equals(selectedCategory)) {
+            JOptionPane.showMessageDialog(this,
+                "🔒 Snacks is locked!\nSelect from MAIN MENU first",
+                "Locked", JOptionPane.WARNING_MESSAGE);
+            txtdrinks.setText(""); // ✅ Snacks panel uses txtdrinks
+            return;
         }
-        else{
-            JoptionPane.showMessageDialog(this,
-            "Enter 1 for Snacks\nEnter 2 for Drinks",
-            "Invalid Choice",
-            JOptionPane.Error_MESSAGE);
-            selectedCategory ="";
+        String input = txtdrinks.getText().trim(); // ✅ TAMA NA — txtdrinks = Snacks input
+        if (input.equals("1")) {
+            itemName = "Piatos";
+            itemPrice = PIATOS;
+            JOptionPane.showMessageDialog(this,
+                "✅ Piatos selected\nPrice: " + itemPrice + ".00 PHP");
+        } else if (input.equals("2")) {
+            itemName = "Nova";
+            itemPrice = NOVA;
+            JOptionPane.showMessageDialog(this,
+                "✅ Nova selected\nPrice: " + itemPrice + ".00 PHP");
+        } else {
+            JOptionPane.showMessageDialog(this,
+                "Enter 1 for Piatos\nEnter 2 for Nova",
+                "Invalid Choice", JOptionPane.ERROR_MESSAGE);
         }
-        txtmenu.setText("");    
-    }//GEN-LAST:event_Jbutton3ActionPerformed
+        txtdrinks.setText("");
+    }//GEN-LAST:event_btnSnacksSelectActionPerformed
+
+    private void btnDrinksSelectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDrinksSelectActionPerformed
+        // TODO add your handling code here:
+        if (!"drinks".equals(selectedCategory)) {
+            JOptionPane.showMessageDialog(this,
+                "🔒 Drinks is locked!\nSelect from MAIN MENU first",
+                "Locked", JOptionPane.WARNING_MESSAGE);
+            txtsnacks.setText(""); // ✅ Drinks panel uses txtsnacks
+            return;
+        }
+        String input = txtsnacks.getText().trim(); // ✅ TAMA NA — txtsnacks = Drinks input
+        if (input.equals("1")) {
+            itemName = "Royal";
+            itemPrice = ROYAL;
+            JOptionPane.showMessageDialog(this,
+                "✅ Royal selected\nPrice: " + itemPrice + ".00 PHP");
+        } else if (input.equals("2")) {
+            itemName = "Coke";
+            itemPrice = COKE;
+            JOptionPane.showMessageDialog(this,
+                "✅ Coke selected\nPrice: " + itemPrice + ".00 PHP");
+        } else {
+            JOptionPane.showMessageDialog(this,
+                "Enter 1 for Royal\nEnter 2 for Coke",
+                "Invalid Choice", JOptionPane.ERROR_MESSAGE);
+        }
+        txtsnacks.setText("");
+    }//GEN-LAST:event_btnDrinksSelectActionPerformed
+
+    private void btnComputeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComputeActionPerformed
+        // TODO add your handling code here:
+        if (itemPrice == 0 || itemName.isEmpty()) {
+            JOptionPane.showMessageDialog(this,
+                "⚠️ Select an item first!",
+                "Notice", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        try {
+            int quantity = Integer.parseInt(txt1quantity.getText().trim());
+            if (quantity <= 0) {
+                JOptionPane.showMessageDialog(this,
+                    "Quantity must be greater than 0",
+                    "Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+            int subtotal = quantity * itemPrice;
+            int cash;
+            try {
+                cash = Integer.parseInt(txt2quantity.getText().trim());
+            } catch (NumberFormatException e) {
+                JOptionPane.showMessageDialog(this,
+                    "Enter a valid number for Cash",
+                    "Input Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+            if (cash < subtotal) {
+                JOptionPane.showMessageDialog(this,
+                    "❌ Insufficient cash!\nTotal: " + subtotal + ".00 PHP\nCash: " + cash + ".00 PHP",
+                    "Error", JOptionPane.ERROR_MESSAGE);
+                txt2quantity.setText("");
+                return;
+            }
+            int change = cash - subtotal;
+
+            jLabellll21.setText(itemName);
+            jLabel21.setText(String.valueOf(quantity));
+            jLabel22.setText(subtotal + ".00 PHP");
+            jLabel23.setText(cash + ".00 PHP");
+            jLabel2.setText(change + ".00 PHP");
+
+            JOptionPane.showMessageDialog(this,
+                "✅ Order Complete!\nChange: " + change + ".00 PHP",
+                "Thank You!", JOptionPane.INFORMATION_MESSAGE);
+        } catch (NumberFormatException ex) {
+            JOptionPane.showMessageDialog(this,
+                "Enter a valid number for Quantity",
+                "Input Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_btnComputeActionPerformed
+
+    private void btnOrderAgainActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOrderAgainActionPerformed
+        // TODO add your handling code here:
+        resetAll();
+        JOptionPane.showMessageDialog(this,
+            "✅ Cleared! Ready for new order.",
+            "Order Again", JOptionPane.INFORMATION_MESSAGE);
+    }//GEN-LAST:event_btnOrderAgainActionPerformed
+
+    private void btnNoThankYouActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNoThankYouActionPerformed
+        // TODO add your handling code here:
+        JOptionPane.showMessageDialog(this,
+            "Thank you for ordering!\nCome again!",
+            "Goodbye", JOptionPane.INFORMATION_MESSAGE);
+        System.exit(0);
+    }//GEN-LAST:event_btnNoThankYouActionPerformed
     private void txtmenuActionPerformed(java.awt.event.ActionEvent evt){
         btnmenuActionPerformed(evt);
     }
     private void txt2quantityActionPerformed(java.awt.event.ActionEvent evt){
-    if (ItemPrice == 0){
-        JoptionPane.showMessageDialog(this,
-                "select an item first!",
-                "Notice",
-                JoptionPane.WARNING_MESSAGE);
-            return;
-    }
-    
-    try {
-        int quantity = Integer.parseInt(txt1quan)
+        
     }
         /**
      * @param args the command line arguments
@@ -435,29 +518,26 @@ public class storeee extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Jbutton1;
-    private javax.swing.JButton Jbutton2;
-    private javax.swing.JButton Jbutton3;
-    private javax.swing.JButton btnchoose5;
-    private java.awt.Button button1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
+    private javax.swing.JButton btnCompute;
+    private javax.swing.JButton btnDrinksSelect;
+    private javax.swing.JButton btnMainSelect;
+    private javax.swing.JButton btnNoThankYou;
+    private javax.swing.JButton btnOrderAgain;
+    private javax.swing.JButton btnSnacksSelect;
     private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
-    private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -471,16 +551,12 @@ public class storeee extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel12;
     private javax.swing.JPanel jPanel14;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
-    private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField6;
     private javax.swing.JTextField txt1quantity;
     private javax.swing.JTextField txt2quantity;
     private javax.swing.JTextField txtdrinks;
@@ -488,27 +564,30 @@ public class storeee extends javax.swing.JFrame {
     private javax.swing.JTextField txtsnacks;
     // End of variables declaration//GEN-END:variables
 private void resetAll(){
-        ItemName = "";
-        ItemPrice = 0;
+       itemName = "";
+        itemPrice = 0;
         selectedCategory = "";
-        
-        //Clear input text fields
+
         txtmenu.setText("");
-        txtdrinks.setText("");
+        txtdrinks.setText("");   // Snacks panel
+        txtsnacks.setText("");    // Drinks panel
         txt1quantity.setText("");
         txt2quantity.setText("");
-        
-        //reset receipt values
+
         jLabellll21.setText("0");
         jLabel21.setText("0");
         jLabel22.setText("00.00 PHP");
         jLabel23.setText("00.00 PHP");
         jLabel2.setText("00.00 PHP");
-        
+
         txtmenu.requestFocus();
 }
 
     private void Jbutton2ActionPerformed(ActionEvent evt) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    private void btnmenuActionPerformed(ActionEvent evt) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
