@@ -9,12 +9,12 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author ralfrenzanacan
+ * @author glenbertcortez
  */
 public class DASHBOARD extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(DASHBOARD.class.getName());
-    private static final String DB_PATH = "C:/Users/ralfrenzanacan/OneDrive/Documents/studentDBcrud.accdb";
+    private static final String DB_PATH = "C://Users//CL2-PC//Documents//cortezdb.accdb";
     private static final String DB_URL = "jdbc:ucanaccess://" + DB_PATH;
 
     /**
@@ -291,7 +291,7 @@ public class DASHBOARD extends javax.swing.JFrame {
     }
     
     // Database connection
-    final String DB_PATH = "C:/Users/ralfrenzanacan/OneDrive/Documents/studentDBcrud.accdb";
+    final String DB_PATH = "C://Users//CL2-PC//Documents//cortezdb.accdb";
     final String DB_URL = "jdbc:ucanaccess://" + DB_PATH;
     
     // SQL statements — delete from both tables

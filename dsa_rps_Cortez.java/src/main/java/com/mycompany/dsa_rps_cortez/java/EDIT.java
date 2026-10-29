@@ -14,7 +14,7 @@ import javax.swing.JOptionPane;
 public class EDIT extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(EDIT.class.getName());
-    private static final String DB_PATH = "C:/Users/ralfrenzanacan/OneDrive/Documents/studentDBcrud.accdb";
+    private static final String DB_PATH = "C://Users//CL2-PC//Documents//cortezdb.accdb";
     private static final String DB_URL = "jdbc:ucanaccess://" + DB_PATH;
     private String studentId;
 
@@ -166,7 +166,7 @@ public class EDIT extends javax.swing.JFrame {
     }
     
     // Database connection details
-    final String DB_PATH = "C:/Users/ralfrenzanacan/OneDrive/Documents/studentDBcrud.accdb";
+    final String DB_PATH = "C://Users//CL2-PC//Documents//cortezdb.accdb";
     final String DB_URL = "jdbc:ucanaccess://" + DB_PATH;
     
     // SQL UPDATE statement

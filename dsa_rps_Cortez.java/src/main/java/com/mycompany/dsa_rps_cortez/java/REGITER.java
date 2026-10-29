@@ -15,7 +15,7 @@ public class REGITER extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(REGITER.class.getName());
     
-    private static final String DB_PATH = "C:/Users/ralfrenzanacan/OneDrive/Documents/studentDBcrud.accdb";
+    private static final String DB_PATH = "C://Users//CL2-PC//Documents//cortezdb.accdb";
     private static final String DB_URL = "jdbc:ucanaccess://" + DB_PATH;
 
     /**
@@ -169,6 +169,7 @@ public class REGITER extends javax.swing.JFrame {
         jButton1.setBackground(new java.awt.Color(0, 204, 153));
         jButton1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jButton1.setText("Register");
+        jButton1.addActionListener(this::jButton1ActionPerformed);
         jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 440, 220, 40));
         jPanel1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 310, 240, 40));
 
@@ -195,6 +196,10 @@ public class REGITER extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments

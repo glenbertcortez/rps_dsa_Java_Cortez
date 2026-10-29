@@ -9,13 +9,13 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author ralfrenzanacan
+ * @author glenbertcortez
  */
 public class LOGIN extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(LOGIN.class.getName());
     
-    private static final String DB_PATH = "C:/Users/ralfrenzanacan/OneDrive/Documents/studentDBcrud.accdb"; 
+    private static final String DB_PATH = "C://Users//CL2-PC//Documents//cortezdb.accdb"; 
     private static final String DB_URL = "jdbc:ucanaccess://" + DB_PATH;
 
     /**

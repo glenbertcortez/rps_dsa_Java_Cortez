@@ -6,7 +6,7 @@ package com.mycompany.dsa_rps_cortez.java;
 
 /**
  *
- * @author ralfrenzanacan
+ * @author glenbertcortez
  */
 public class Calculataor extends javax.swing.JFrame {
     
